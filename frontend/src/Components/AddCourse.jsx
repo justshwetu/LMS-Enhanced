@@ -5,12 +5,12 @@ function AddCourse() {
   const navigate  = useNavigate();
   const[error , setError] = useState('');
   const [formData, setFormData] = useState({
-    courseName: '',
-    tutor:'',
+    course_name: '',
+    instructor:'',
     price:'',
     description:'',
-    video:'',
-    photo:'',
+    y_link:'',
+    p_link:'',
   });
 
   const handleChange = (e) => {
@@ -48,17 +48,17 @@ function AddCourse() {
       <h2>Course Registration</h2>
       <form onSubmit={handleSubmit} className="addCourse-form">
       <label>Name : </label>
-      <input type="text" name="courseName" value={formData.courseName} onChange={handleChange}  required style={{width:"100%  "}}/>
+      <input type="text" name="course_name" value={formData.course_name} onChange={handleChange}  required style={{width:"100%  "}}/>
       <label>instructor : </label>
-      <input type="text" name="tutor" value={formData.tutor} onChange={handleChange}  required style={{width:"100%"}}/>
+      <input type="text" name="instructor" value={formData.instructor} onChange={handleChange}  required style={{width:"100%"}}/>
       <label>price : </label>
       <input type="number" name="price" value={formData.price} onChange={handleChange}  required style={{width:"100%"}}/>
       <label>description : </label>
       <input type="text" name="description" value={formData.description} onChange={handleChange}  required style={{width:"100%"}}/>
       <label>Video Link : </label>
-      <input type="text" name="video" value={formData.video} onChange={handleChange}  required style={{width:"100%"}}/>
+      <input type="text" name="y_link" value={formData.y_link} onChange={handleChange}  required style={{width:"100%"}}/>
       <label>Image Link : </label>
-      <input type="text" name="photo" value={formData.photo} onChange={handleChange}  required style={{width:"100%"}}/>
+      <input type="text" name="p_link" value={formData.p_link} onChange={handleChange}  required style={{width:"100%"}}/>
         {error && <span className='error-msg'>{error}</span>}
         <div className='btn1'><button type="submit">Add Course</button></div>
       </form>
