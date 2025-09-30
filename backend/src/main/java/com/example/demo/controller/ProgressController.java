@@ -4,7 +4,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.dto.ProgressRequest;
-import com.example.demo.entity.Progress;
 import com.example.demo.service.ProgressService;
 
 @RestController

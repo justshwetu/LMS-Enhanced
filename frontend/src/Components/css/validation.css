@@ -1,0 +1,80 @@
+/* Validation and Error Styling */
+.validation-error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.error-msg {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+}
+
+.registration-error-msg {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.25rem;
+}
+
+/* Input field error styling */
+.form-control.error,
+input.error,
+select.error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Success styling */
+.success-msg {
+  color: #155724;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 0.25rem;
+}
+
+/* Loading state for buttons */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Form validation styling improvements */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.registration-input-group {
+  margin-bottom: 1rem;
+}
+
+.registration-input-group > div {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive validation messages */
+@media (max-width: 768px) {
+  .validation-error,
+  .error-msg,
+  .registration-error-msg {
+    font-size: 0.75rem;
+  }
+}

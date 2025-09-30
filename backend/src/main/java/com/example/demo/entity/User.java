@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import java.util.List;
 
 @Entity
@@ -8,15 +9,32 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @NotBlank(message = "Username is required")
+    @Size(min = 3, max = 50, message = "Username must be between 3 and 50 characters")
     private String username;
+    
+    @NotBlank(message = "Email is required")
+    @Email(message = "Please provide a valid email address")
+    @Column(unique = true)
     private String email;
+    
+    @NotBlank(message = "Password is required")
+    @Size(min = 6, message = "Password must be at least 6 characters long")
     private String password;
+    
+    @Pattern(regexp = "^[0-9]{10}$", message = "Phone number must be 10 digits")
     private String phno;
+    
     private String dob;
     private String gender;
     private String location;
     private String profession;
+    
+    @Pattern(regexp = "^https?://.*linkedin.*", message = "Please provide a valid LinkedIn URL")
     private String linkedin_url;
+    
+    @Pattern(regexp = "^https?://.*github.*", message = "Please provide a valid GitHub URL")
     private String github_url;
     
     public String getDob() {

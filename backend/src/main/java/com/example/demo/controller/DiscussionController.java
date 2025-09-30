@@ -10,10 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.demo.dto.DiscussionRequest;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.Discussion;
-import com.example.demo.entity.User;
 import com.example.demo.service.CourseService;
 import com.example.demo.service.DiscussionService;
-import com.example.demo.service.UserService;
 
 @RestController
 @RequestMapping("/api/discussions")

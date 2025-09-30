@@ -141,7 +141,7 @@ const Course = () => {
           height: "-19px",
         }}
       >
-        The Complete {course.course_name} Course - 2023
+        The Complete {course.course_name} Course - 2025
       </h3>
       <div
         style={{
