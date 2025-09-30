@@ -16,6 +16,7 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
 
+
     @Autowired
     private UserService userService;
 
