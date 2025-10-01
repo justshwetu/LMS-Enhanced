@@ -35,6 +35,26 @@ public class UserController {
         return userService.createUser(user);
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
+        try {
+            // Check if user already exists
+            User existingUser = userService.getUserByEmail(user.getEmail());
+            if (existingUser != null) {
+                return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Collections.singletonMap("message", "User with this email already exists"));
+            }
+
+            // Create new user
+            User newUser = userService.createUser(user);
+            return ResponseEntity.status(HttpStatus.CREATED)
+                .body(Collections.singletonMap("message", "User registered successfully"));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Collections.singletonMap("message", "Registration failed. Please try again."));
+        }
+    }
+
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
         return userService.updateUser(id, updatedUser);

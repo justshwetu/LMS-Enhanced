@@ -67,10 +67,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
+						<!-- Lombok should not be excluded for proper annotation processing -->
 					</excludes>
 				</configuration>
 			</plugin>
